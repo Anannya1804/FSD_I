@@ -3,119 +3,257 @@
   <head>
     <meta charset="UTF-8" />
     <title>Ananya Kale | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      :root {
+        --bg: #f7f9fc;
+        --card: #ffffff;
+        --text: #1f2937;
+        --accent: #2563eb;
+        --border: #e5e7eb;
+      }
+
+      body.dark {
+        --bg: #0f172a;
+        --card: #1e293b;
+        --text: #e5e7eb;
+        --border: #334155;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", "Segoe UI", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      /* NAVBAR */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: var(--card);
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 30px;
+        z-index: 1000;
+      }
+
+      nav h2 {
+        font-size: 1.2rem;
+        color: var(--accent);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 18px;
+      }
+
+      nav ul a {
+        text-decoration: none;
+        color: var(--text);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      nav ul a:hover {
+        color: var(--accent);
+      }
+
+      .toggle {
+        cursor: pointer;
+        font-size: 1.1rem;
+      }
+
+      /* LAYOUT */
+      .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 90px 20px 40px;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      header h1 {
+        font-size: 2.4rem;
+        font-weight: 700;
+      }
+
+      header span {
+        color: var(--accent);
+      }
+
+      header p {
+        margin-top: 8px;
+        font-size: 0.95rem;
+        opacity: 0.85;
+      }
+
+      section {
+        margin-bottom: 35px;
+      }
+
+      section h3 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        border-left: 4px solid var(--accent);
+        padding-left: 10px;
+      }
+
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 15px 18px;
+        margin-bottom: 12px;
+      }
+
+      .title {
+        font-weight: 600;
+      }
+
+      .sub {
+        font-size: 0.9rem;
+        opacity: 0.8;
+      }
+
+      ul {
+        padding-left: 18px;
+      }
+
+      ul li {
+        margin-bottom: 6px;
+        font-size: 0.95rem;
+      }
+
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 0.85rem;
+        opacity: 0.6;
+        margin-top: 30px;
+      }
+
+      @media (max-width: 600px) {
+        nav ul {
+          display: none;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <h1>Ananya Kale</h1>
-    <p>
-      <strong>Email:</strong>
-      <a href="mailto:ananyakale2004@gmail.com">ananyakale2004@gmail.com</a
-      ><br />
-      <strong>Phone:</strong> 8788498994<br />
-      <strong>University:</strong> MIT World Peace University, Pune, Maharashtra
-    </p>
+    <nav>
+      <h2>Ananya</h2>
+      <ul>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+      </ul>
+      <div class="toggle" onclick="toggleTheme()">🌙</div>
+    </nav>
 
-    <hr />
+    <div class="container">
+      <header>
+        <h1>Ananya <span>Kale</span></h1>
+        <p>
+          B.Tech Computer Science Engineering <br />
+          MIT World Peace University, Pune <br />
+          ananyakale2004@gmail.com · 8788498994
+        </p>
+      </header>
 
-    <h2>Education</h2>
-    <ul>
-      <li>
-        <strong>B.Tech in Computer Science Engineering</strong><br />
-        MIT World Peace University, Pune<br />
-        June 2022 – June 2027
-      </li>
-      <li>
-        <strong>Higher Secondary (HSC)</strong> – 83.83%<br />
-        Cambridge High International College, 2022
-      </li>
-      <li>
-        <strong>Secondary (CBSE)</strong> – 81%<br />
-        Pravara Central Public School, Maharashtra, 2020
-      </li>
-    </ul>
+      <!-- EDUCATION -->
+      <section id="education">
+        <h3>Education</h3>
 
-    <hr />
+        <div class="card">
+          <div class="title">B.Tech in Computer Science Engineering</div>
+          <div class="sub">MIT World Peace University, Pune · 2022 – 2027</div>
+        </div>
 
-    <h2>Technical Skills</h2>
-    <ul>
-      <li>Programming Languages: C, C++, Python, Java, SQL</li>
-      <li>Data & Visualization Tools: MS Excel, Power BI, Tableau</li>
-      <li>Libraries & Databases: Pandas, NumPy, MongoDB</li>
-      <li>Other Tools: MATLAB, WordPress</li>
-      <li>Core Concepts: OOP, DBMS, Machine Learning, Research Writing</li>
-    </ul>
+        <div class="card">
+          <div class="title">Higher Secondary (HSC) – 83.83%</div>
+          <div class="sub">Cambridge High International College · 2022</div>
+        </div>
 
-    <hr />
+        <div class="card">
+          <div class="title">Secondary (CBSE) – 81%</div>
+          <div class="sub">
+            Pravara Central Public School, Maharashtra · 2020
+          </div>
+        </div>
+      </section>
 
-    <h2>Projects</h2>
+      <!-- SKILLS -->
+      <section id="skills">
+        <h3>Technical Skills</h3>
+        <div class="skills">
+          <div class="card">C, C++, Python, Java, SQL</div>
+          <div class="card">Excel, Power BI, Tableau</div>
+          <div class="card">Pandas, NumPy, MongoDB</div>
+          <div class="card">OOP, DBMS, Machine Learning</div>
+        </div>
+      </section>
 
-    <h3>Sorting Algorithm Visualizer</h3>
-    <p>
-      <strong>Technologies:</strong> Python, Tkinter (GUI)<br />
-      Developed an interactive visualization for Bubble Sort, Quick Sort, and
-      Merge Sort. Designed an intuitive interface using bar-chart visualizations
-      to represent algorithm behavior.
-    </p>
+      <!-- PROJECTS -->
+      <section id="projects">
+        <h3>Projects</h3>
 
-    <h3>Document-based Question Answering System</h3>
-    <p>
-      <strong>Technologies:</strong> Python, LangChain, Pinecone, OpenAI<br />
-      Built a system to load and analyze PDF and text files. Implemented
-      advanced language models to extract accurate answers from documents.
-    </p>
+        <div class="card">
+          <div class="title">Sorting Algorithm Visualizer</div>
+          <div class="sub">Python, Tkinter</div>
+        </div>
 
-    <h3>Food Delivery Chatbot System</h3>
-    <p>
-      <strong>Technologies:</strong> Python, Dialogflow, MySQL, FastAPI<br />
-      Developed a chatbot for a food delivery website allowing seamless order
-      placement. Built backend services using FastAPI and managed data with
-      MySQL.
-    </p>
+        <div class="card">
+          <div class="title">Document-based Question Answering System</div>
+          <div class="sub">LangChain, Pinecone, OpenAI</div>
+        </div>
 
-    <h3>Real-Time Human Detection and Pose Estimation System</h3>
-    <p>
-      <strong>Technologies:</strong> Python, Tkinter, SVM, Machine Learning,
-      Computer Vision<br />
-      Built an AI model to detect body and hand gestures. Enabled actions like
-      Attention, Cancel, Call Police, Call Hospital, and Call Cab based on
-      gestures.
-    </p>
+        <div class="card">
+          <div class="title">Food Delivery Chatbot</div>
+          <div class="sub">Dialogflow, FastAPI, MySQL</div>
+        </div>
+      </section>
 
-    <hr />
+      <!-- ACHIEVEMENTS -->
+      <section id="achievements">
+        <h3>Achievements</h3>
+        <ul>
+          <li>Letter of Recommendation as Ethical Hacker – MyCaptain</li>
+          <li>Python Programming Recognition – HackerRank</li>
+          <li>Data Science Certification – Infosys Springboard</li>
+        </ul>
+      </section>
 
-    <h2>Achievements</h2>
-    <ul>
-      <li>
-        Received a Letter of Recommendation as an Ethical Hacker from MyCaptain
-      </li>
-      <li>
-        Achieved recognition in Python Programming challenges on HackerRank
-      </li>
-      <li>Completed Data Science Certification from Infosys Springboard</li>
-    </ul>
+      <footer>© 2026 Ananya Kale</footer>
+    </div>
 
-    <hr />
-
-    <h2>Personal Skills</h2>
-    <ul>
-      <li>Leadership qualities</li>
-      <li>Ability to work under pressure</li>
-      <li>Comfortable working independently</li>
-      <li>Proactive problem-solving mindset</li>
-    </ul>
-
-    <hr />
-
-    <h2>Hobbies</h2>
-    <ul>
-      <li>Sports</li>
-      <li>Leading and managing projects</li>
-      <li>Exploring new places</li>
-    </ul>
-
-    <hr />
-
-    <p>
-      <strong>© 2026 Ananya Kale</strong>
-    </p>
+    <script>
+      function toggleTheme() {
+        document.body.classList.toggle("dark");
+        document.querySelector(".toggle").textContent =
+          document.body.classList.contains("dark") ? "☀️" : "🌙";
+      }
+    </script>
   </body>
 </html>
